@@ -10,6 +10,10 @@
     "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
     "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bigpipe/enabled.git"
+  },
   "keywords": [
     "enabled",
     "debug",
