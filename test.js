@@ -42,11 +42,13 @@ describe('enabled', function () {
   });
 
   it('can ignore loggers using a -', function () {
-    process.env.DEBUG = 'bigpipe,-primus,sack';
+    process.env.DEBUG = 'bigpipe,-primus,sack,-other';
 
     assume(enabled('bigpipe')).to.be.true();
     assume(enabled('sack')).to.be.true();
     assume(enabled('primus')).to.be.false();
+    assume(enabled('other')).to.be.false();
+    assume(enabled('unknown')).to.be.false();
   });
 
   it('supports multiple ranges', function () {
