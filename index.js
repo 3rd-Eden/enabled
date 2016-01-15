@@ -30,8 +30,8 @@ module.exports = function enabled(name, variables) {
     variable = variables[i].replace('*', '.*?');
 
     if ('-' === variable.charAt(0)) {
-      if (!(new RegExp('^'+ variable.substr(1) +'$')).test(name)) {
-        return true;
+      if ((new RegExp('^'+ variable.substr(1) +'$')).test(name)) {
+        return false;
       }
 
       continue;
