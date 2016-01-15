@@ -41,7 +41,12 @@ The returned `enabled` function accepts 2 arguments.
 #### Examples
 
 ```js
-process.env.DEBUG = 'foob';
+process.env.DEBUG = 'foo';
+enabled('foo') // true;
+enabled('bar') // false;
+
+// can use wildcards
+process.env.DEBUG = 'foob*';
 
 enabled('foobar') // true;
 enabled('barfoo') // false;
